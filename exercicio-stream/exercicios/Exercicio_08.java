@@ -20,7 +20,11 @@ public class Exercicio_08 {
         List<Pessoa> pessoas = Dados.getPessoas();
 
         // Calcular a média de idade das pessoas
+        double mediaIdade = Dados.getPessoas().stream()
+        .mapToDouble(Pessoa::getIdade) //transforma a lista em apenas idade
+        .average()
+        .orElse(0); // Caso a lista esteja vazia, retornamos 0 como valor padrão
 
-
-    }
+System.out.println("Média de idade das pessoas: " + mediaIdade);
+}
 }

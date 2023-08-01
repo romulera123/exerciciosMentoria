@@ -20,7 +20,11 @@ public class Exercicio_07 {
         List<Pessoa> pessoas = Dados.getPessoas();
 
         // Contar quantas pessoas tem mais de 45 anos
+        long pessoasAcima45 = Dados.getPessoas().stream()
+                .filter(pessoa -> pessoa.getIdade() > 45)
+                .count();
 
+        System.out.println("Número de pessoas com mais de 45 anos: " + pessoasAcima45);
 
     }
 }
