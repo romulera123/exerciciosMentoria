@@ -48,7 +48,7 @@ public class AtendimentoController {
     @PostMapping("/{id}")
     public ResponseEntity<Void> close(@PathVariable long id, @RequestBody MedicamentosDTO medicamentos) {
         if (service.close(id, medicamentos.getMedicamentos())) {
-            templateString.send("farmacia", medicamentos.getMedicamentos());    
+            templateString.send("hospital-farmacia", medicamentos.getMedicamentos());    
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
